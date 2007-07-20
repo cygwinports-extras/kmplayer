@@ -1,0 +1,188 @@
+kmplayer
+------------------------------------------
+A simple KDE frontend for MPlayer/FFMpeg/Xine/GStreamer, 
+as well as a Konqueror KPart plugin.
+
+Runtime requirements:
+  cygwin-1.5.24-2
+  ffmpeg-20070413-1
+  glib2-2.12.13-1
+  gstreamer010-0.10.13-1
+  gstreamer010-plugins-base-0.10.13-1
+  gstreamer010-plugins-oss
+  gstreamer010-plugins-ximage
+  kdelibs4-3.5.7-1
+  libX11_6-1.1.1-1
+  libXext6-1.0.2-1
+  libcairo2-1.4.10-1
+  libxine1-1.1.7-1
+  mplayer-1.0_rc1-1
+  qt3-3.3.8-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygwin-1.5.24-2
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20060817-1
+  cygport-0.3.5-1
+  gawk-3.1.5-4
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  libtool1.5-1.5.23a-2
+  make-3.81-1
+  perl-5.8.7-5
+  pkg-config-0.21-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://kmplayer.kde.org/
+
+Canonical download:
+  http://kmplayer.kde.org/pkgs/
+
+-------------------------------------------
+
+Build instructions:
+  unpack kmplayer-0.9.4a-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./kmplayer-0.9.4a-X.cygport all
+
+This will create:
+  /usr/src/kmplayer-0.9.4a-X-src.tar.bz2
+  /usr/src/kmplayer-0.9.4a-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /etc/postinstall/kmplayer.sh
+  /usr/bin/cygkdeinit_kmplayer.dll
+  /usr/bin/cygkmplayercommon-0.dll
+  /usr/bin/kgstplayer.exe
+  /usr/bin/kmplayer.exe
+  /usr/bin/kxineplayer.exe
+  /usr/lib/kde3/cygkmplayerpart.dll
+  /usr/lib/kde3/kmplayer.dll
+  /usr/lib/kde3/kmplayer.la
+  /usr/lib/kde3/libkmplayerpart.la
+  /usr/lib/libkdeinit_kmplayer.dll.a
+  /usr/lib/libkdeinit_kmplayer.la
+  /usr/lib/libkmplayercommon.dll.a
+  /usr/lib/libkmplayercommon.la
+  /usr/share/applications/kde/kmplayer.desktop
+  /usr/share/apps/kmplayer/bookmarks.xml
+  /usr/share/apps/kmplayer/kmplayerpartui.rc
+  /usr/share/apps/kmplayer/kmplayerui.rc
+  /usr/share/apps/kmplayer/noise.gif
+  /usr/share/apps/kmplayer/pluginsinfo
+  /usr/share/config/kmplayerrc
+  /usr/share/doc/Cygwin/kmplayer-0.9.4a.README
+  /usr/share/doc/HTML/da/kmplayer/common
+  /usr/share/doc/HTML/da/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/da/kmplayer/index.docbook
+  /usr/share/doc/HTML/de/kmplayer/common
+  /usr/share/doc/HTML/de/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/de/kmplayer/index.docbook
+  /usr/share/doc/HTML/en/kmplayer/common
+  /usr/share/doc/HTML/en/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/en/kmplayer/index.docbook
+  /usr/share/doc/HTML/es/kmplayer/common
+  /usr/share/doc/HTML/es/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/es/kmplayer/index.docbook
+  /usr/share/doc/HTML/et/kmplayer/common
+  /usr/share/doc/HTML/et/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/et/kmplayer/index.docbook
+  /usr/share/doc/HTML/fr/kmplayer/common
+  /usr/share/doc/HTML/fr/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/fr/kmplayer/index.docbook
+  /usr/share/doc/HTML/it/kmplayer/common
+  /usr/share/doc/HTML/it/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/it/kmplayer/index.docbook
+  /usr/share/doc/HTML/nl/kmplayer/common
+  /usr/share/doc/HTML/nl/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/nl/kmplayer/index.docbook
+  /usr/share/doc/HTML/pt/kmplayer/common
+  /usr/share/doc/HTML/pt/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/pt/kmplayer/index.docbook
+  /usr/share/doc/HTML/ru/kmplayer/common
+  /usr/share/doc/HTML/ru/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/ru/kmplayer/index.docbook
+  /usr/share/doc/HTML/sv/kmplayer/common
+  /usr/share/doc/HTML/sv/kmplayer/index.cache.bz2
+  /usr/share/doc/HTML/sv/kmplayer/index.docbook
+  /usr/share/doc/kmplayer-0.9.4a/AUTHORS
+  /usr/share/doc/kmplayer-0.9.4a/COPYING
+  /usr/share/doc/kmplayer-0.9.4a/COPYING-DOCS
+  /usr/share/doc/kmplayer-0.9.4a/COPYING.LIB
+  /usr/share/doc/kmplayer-0.9.4a/ChangeLog
+  /usr/share/doc/kmplayer-0.9.4a/INSTALL
+  /usr/share/doc/kmplayer-0.9.4a/README
+  /usr/share/doc/kmplayer-0.9.4a/TODO
+  /usr/share/icons/hicolor/128x128/apps/kmplayer.png
+  /usr/share/icons/hicolor/16x16/apps/kmplayer.png
+  /usr/share/icons/hicolor/22x22/apps/kmplayer.png
+  /usr/share/icons/hicolor/32x32/apps/kmplayer.png
+  /usr/share/icons/hicolor/48x48/apps/kmplayer.png
+  /usr/share/icons/hicolor/64x64/apps/kmplayer.png
+  /usr/share/icons/hicolor/scalable/apps/kmplayer.svgz
+  /usr/share/locale/ar/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/br/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/bs/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ca/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/cs/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/cy/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/da/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/de/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/el/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/es/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/et/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/fi/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/fr/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ga/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/gl/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/he/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/hi/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/hu/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/is/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/it/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ja/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ka/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/lt/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/mt/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/nb/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/nl/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/pa/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/pl/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/pt/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ro/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ru/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/rw/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/sk/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/sr/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/sr@Latn/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/sv/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/ta/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/tr/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/uk/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/xx/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
+  /usr/share/mimelnk/application/x-kmplayer.desktop
+  /usr/share/mimelnk/application/x-mplayer2.desktop
+  /usr/share/mimelnk/video/x-ms-wmp.desktop
+  /usr/share/services/kmplayer_part.desktop
+
+------------------
+
+Port Notes:
+
+----- version 0.9.4a-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

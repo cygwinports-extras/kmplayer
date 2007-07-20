@@ -1,0 +1,7 @@
+inherit kde3
+
+DESCRIPTION="KDE MPlayer/Xine/GStreamer frontend"
+HOMEPAGE="http://kmplayer.kde.org/"
+SRC_URI="http://kmplayer.kde.org/pkgs/${P}.tar.bz2"
+
+CYGCONF_ARGS="--without-xv"

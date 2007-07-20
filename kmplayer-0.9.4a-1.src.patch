@@ -1,0 +1,69 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x 'libtool.m4.in*' -x configure.bak -x configure.files -x acinclude.m4 -x subdirs -x configure.in origsrc/kmplayer-0.9.4a/configure.in.in src/kmplayer-0.9.4a/configure.in.in
+--- origsrc/kmplayer-0.9.4a/configure.in.in	2007-04-03 16:15:50.000000000 -0500
++++ src/kmplayer-0.9.4a/configure.in.in	2007-07-20 14:56:29.531250000 -0500
+@@ -136,6 +136,14 @@
+ 
+ AM_CONDITIONAL(include_kgstplayer, [test "x$have_gst" = "xyes" && test "x$have_gst_plugins" = "xyes"])
+ 
++AC_ARG_WITH(xv,
++    AC_HELP_STRING([--without-xv],[build KMPlayer without XVideo extension [default=with]]),
++    [build_xv=$withval],
++    [build_xv=yes]
++)
++
++AM_CONDITIONAL(include_kxvplayer, test "$build_xv" = "yes")
++
+ hascairo=yes
+ LIBCAIRO_LIBS=""
+ LIBCAIRO_CFLAGS=""
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in -x 'libtool.m4.in*' -x configure.bak -x configure.files -x acinclude.m4 -x subdirs -x configure.in origsrc/kmplayer-0.9.4a/src/Makefile.am src/kmplayer-0.9.4a/src/Makefile.am
+--- origsrc/kmplayer-0.9.4a/src/Makefile.am	2007-04-03 16:15:50.000000000 -0500
++++ src/kmplayer-0.9.4a/src/Makefile.am	2007-07-20 15:26:17.203125000 -0500
+@@ -5,8 +5,8 @@
+ lib_LTLIBRARIES= libkmplayercommon.la
+ 
+ libkmplayercommon_la_SOURCES = viewarea.cpp kmplayerview.cpp playlistview.cpp kmplayercontrolpanel.cpp kmplayerconfig.cpp pref.cpp kmplayerprocess.cpp kmplayer_callback.skel kmplayer_backend.stub kmplayerpartbase.cpp kmplayerplaylist.cpp kmplayer_asx.cpp kmplayer_smil.cpp kmplayer_rp.cpp kmplayer_rss.cpp kmplayer_atom.cpp kmplayer_xspf.cpp triestring.cpp kmplayerpartbase.skel
+-libkmplayercommon_la_LDFLAGS = -avoid-version $(all_libraries)
+-libkmplayercommon_la_LIBADD = -lkmediaplayer $(LIB_KPARTS) $(LIB_KUTILS) $(LIB_EXPAT) -lm $(LIBCAIRO_LIBS)
++libkmplayercommon_la_LDFLAGS = -no-undefined $(all_libraries)
++libkmplayercommon_la_LIBADD = -lkmediaplayer $(LIB_KPARTS) $(LIB_KUTILS) $(LIB_KIO) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP $(LIB_QT) $(LIB_EXPAT) -lm $(LIBCAIRO_LIBS)
+ 
+ if include_koffice_support
+ kofficeplugin_lib= libkmplayerkofficepart.la
+@@ -16,27 +16,30 @@
+ kde_module_LTLIBRARIES= libkmplayerpart.la $(kofficeplugin_lib)
+ 
+ libkmplayerpart_la_SOURCES= kmplayer_part.cpp
+-libkmplayerpart_la_LDFLAGS= -avoid-version $(all_libraries) $(KDE_RPATH)
+-libkmplayerpart_la_LIBADD= libkmplayercommon.la
++libkmplayerpart_la_LDFLAGS= $(all_libraries) $(KDE_PLUGIN)
++libkmplayerpart_la_LIBADD= libkmplayercommon.la -lkmediaplayer $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP $(LIB_QT)
+ 
+ libkmplayerkofficepart_la_SOURCES=kmplayer_koffice_part.cpp
+-libkmplayerkofficepart_la_LDFLAGS= -avoid-version $(all_libraries) $(KDE_RPATH)
+-libkmplayerkofficepart_la_LIBADD= libkmplayercommon.la $(LIB_KOFFICE)
++libkmplayerkofficepart_la_LDFLAGS= $(all_libraries) $(KDE_PLUGIN)
++libkmplayerkofficepart_la_LIBADD= libkmplayercommon.la $(LIB_KOFFICE) $(LIB_KPARTS) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT)
+ 
+ kdeinit_LTLIBRARIES=kmplayer.la
+ kmplayer_la_SOURCES= main.cpp kmplayerapp.cpp kmplayertvsource.cpp kmplayerbroadcast.cpp kmplayervdr.cpp
+-kmplayer_la_LIBADD= libkmplayercommon.la
++kmplayer_la_LIBADD= libkmplayercommon.la $(LIB_KIO) $(LIB_KDEUI) $(LIB_KDECORE) -lDCOP $(LIB_QT)
+ kmplayer_la_LDFLAGS= -module $(KDE_PLUGIN)
+ 
+ EXTRA_PROGRAMS = kxineplayer kxvplayer kgstplayer
+ if include_kxineplayer
+ kxineplayer_app = kxineplayer
+ endif
++if include_kxvplayer
++kxvplayer_app = kxvplayer
++endif
+ if include_kgstplayer
+ kgstplayer_app = kgstplayer
+ endif
+ 
+-bin_PROGRAMS= $(kxineplayer_app) kxvplayer $(kgstplayer_app)
++bin_PROGRAMS= $(kxineplayer_app) $(kxvplayer_app) $(kgstplayer_app)
+ 
+ noinst_LTLIBRARIES = libkmplayerbackend.la
+ libkmplayerbackend_la_SOURCES = kmplayer_backend.skel kmplayer_callback.stub
