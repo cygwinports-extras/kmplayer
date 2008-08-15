@@ -4,35 +4,34 @@ A simple KDE frontend for MPlayer/FFMpeg/Xine/GStreamer,
 as well as a Konqueror KPart plugin.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  ffmpeg-20070413-1
-  glib2-2.12.13-1
-  gstreamer010-0.10.13-1
-  gstreamer010-plugins-base-0.10.13-1
+  cygwin-1.5.25-15
+  ffmpeg
+  glib2-2.16.4-1
+  gstreamer010-0.10.20-1
+  gstreamer010-plugins-base-0.10.20-1
   gstreamer010-plugins-oss
   gstreamer010-plugins-ximage
-  kdelibs4-3.5.7-1
-  libX11_6-1.1.1-1
-  libXext6-1.0.2-1
-  libcairo2-1.4.10-1
-  libxine1-1.1.7-1
-  mplayer-1.0_rc1-1
-  qt3-3.3.8-1
+  kdelibs4-3.5.9-1
+  libcairo2-1.6.4-1
+  libX11_6-1.1.3-1
+  libXext6-1.0.3-1
+  libxine1-1.1.14-1
+  mplayer
+  qt3-3.3.8-4
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   autoconf2.5-2.61-1
   automake1.9-1.9.6-2
-  binutils-20060817-1
-  cygport-0.3.5-1
-  gawk-3.1.5-4
+  binutils-20080524-2
+  cygport-0.3.12-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
   gcc-g++-3.4.4-3
-  libtool1.5-1.5.23a-2
+  libtool-2.2.2-2
   make-3.81-1
-  perl-5.8.7-5
-  pkg-config-0.21-1
+  perl-5.10.0-5
+  pkg-config-0.23a-2
   sed-4.1.5-2
 
 Canonical website:
@@ -44,15 +43,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack kmplayer-0.9.4a-X-src.tar.bz2
+  unpack kmplayer-0.10.0c-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./kmplayer-0.9.4a-X.cygport all
+  cygport ./kmplayer-0.10.0c-X.cygport all
 
 This will create:
-  /usr/src/kmplayer-0.9.4a-X-src.tar.bz2
-  /usr/src/kmplayer-0.9.4a-X.tar.bz2
+  /usr/src/kmplayer-0.10.0c-X-src.tar.bz2
+  /usr/src/kmplayer-0.10.0c-X.tar.bz2
 
 -------------------------------------------
 
@@ -60,7 +59,7 @@ Files included in the binary package:
 
   /etc/postinstall/kmplayer.sh
   /usr/bin/cygkdeinit_kmplayer.dll
-  /usr/bin/cygkmplayercommon-0.dll
+  /usr/bin/cygkmplayercommon.dll
   /usr/bin/kgstplayer.exe
   /usr/bin/kmplayer.exe
   /usr/bin/kxineplayer.exe
@@ -68,7 +67,6 @@ Files included in the binary package:
   /usr/lib/kde3/kmplayer.dll
   /usr/lib/kde3/kmplayer.la
   /usr/lib/kde3/libkmplayerpart.la
-  /usr/lib/libkdeinit_kmplayer.dll.a
   /usr/lib/libkdeinit_kmplayer.la
   /usr/lib/libkmplayercommon.dll.a
   /usr/lib/libkmplayercommon.la
@@ -79,7 +77,6 @@ Files included in the binary package:
   /usr/share/apps/kmplayer/noise.gif
   /usr/share/apps/kmplayer/pluginsinfo
   /usr/share/config/kmplayerrc
-  /usr/share/doc/Cygwin/kmplayer-0.9.4a.README
   /usr/share/doc/HTML/da/kmplayer/common
   /usr/share/doc/HTML/da/kmplayer/index.cache.bz2
   /usr/share/doc/HTML/da/kmplayer/index.docbook
@@ -113,14 +110,14 @@ Files included in the binary package:
   /usr/share/doc/HTML/sv/kmplayer/common
   /usr/share/doc/HTML/sv/kmplayer/index.cache.bz2
   /usr/share/doc/HTML/sv/kmplayer/index.docbook
-  /usr/share/doc/kmplayer-0.9.4a/AUTHORS
-  /usr/share/doc/kmplayer-0.9.4a/COPYING
-  /usr/share/doc/kmplayer-0.9.4a/COPYING-DOCS
-  /usr/share/doc/kmplayer-0.9.4a/COPYING.LIB
-  /usr/share/doc/kmplayer-0.9.4a/ChangeLog
-  /usr/share/doc/kmplayer-0.9.4a/INSTALL
-  /usr/share/doc/kmplayer-0.9.4a/README
-  /usr/share/doc/kmplayer-0.9.4a/TODO
+  /usr/share/doc/kmplayer-0.10.0c/AUTHORS
+  /usr/share/doc/kmplayer-0.10.0c/COPYING
+  /usr/share/doc/kmplayer-0.10.0c/COPYING-DOCS
+  /usr/share/doc/kmplayer-0.10.0c/COPYING.LIB
+  /usr/share/doc/kmplayer-0.10.0c/ChangeLog
+  /usr/share/doc/kmplayer-0.10.0c/INSTALL
+  /usr/share/doc/kmplayer-0.10.0c/README
+  /usr/share/doc/kmplayer-0.10.0c/TODO
   /usr/share/icons/hicolor/128x128/apps/kmplayer.png
   /usr/share/icons/hicolor/16x16/apps/kmplayer.png
   /usr/share/icons/hicolor/22x22/apps/kmplayer.png
@@ -129,10 +126,12 @@ Files included in the binary package:
   /usr/share/icons/hicolor/64x64/apps/kmplayer.png
   /usr/share/icons/hicolor/scalable/apps/kmplayer.svgz
   /usr/share/locale/ar/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/be/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/br/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/bs/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/ca/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/cs/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/csb/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/cy/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/da/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/de/LC_MESSAGES/kmplayer.mo
@@ -155,6 +154,7 @@ Files included in the binary package:
   /usr/share/locale/mt/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/nb/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/nl/LC_MESSAGES/kmplayer.mo
+  /usr/share/locale/nn/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/pa/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/pl/LC_MESSAGES/kmplayer.mo
   /usr/share/locale/pt/LC_MESSAGES/kmplayer.mo
@@ -179,6 +179,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 0.10.0c-1 -----
+Version bump.
 
 ----- version 0.9.4a-1 -----
 Initial release for Cygwin.

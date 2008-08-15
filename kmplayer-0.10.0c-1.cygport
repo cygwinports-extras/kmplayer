@@ -3,5 +3,10 @@ inherit kde3
 DESCRIPTION="KDE MPlayer/Xine/GStreamer frontend"
 HOMEPAGE="http://kmplayer.kde.org/"
 SRC_URI="http://kmplayer.kde.org/pkgs/${P}.tar.bz2"
+PATCH_URI="
+	0.10.0c-no-undefined.patch
+	0.10.0c-xv.patch
+	0.10.0c-pluginsinfo.patch
+"
 
-CYGCONF_ARGS="--without-xv"
+CYGCONF_ARGS="--disable-nspr --without-xv"
