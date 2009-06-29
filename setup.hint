@@ -1,5 +1,5 @@
 category: Audio Video KDE
-requires: cygwin kdelibs4 qt3 ffmpeg glib2 gstreamer010 gstreamer010-plugins-base gstreamer010-plugins-oss gstreamer010-plugins-ximage libX11_6 libXext6 libcairo2 libxine1 mplayer
+requires: kdelibs4 qt3 ffmpeg glib2 gstreamer010 gstreamer010-plugins-base gstreamer010-plugins-oss gstreamer010-plugins-ximage libX11_6 libXext6 libcairo2 libxine1 mplayer
 sdesc: "KDE multimedia player with Konqueror plugin"
 ldesc: "A simple KDE frontend for MPlayer/FFMpeg/Xine/GStreamer,
 as well as a Konqueror KPart plugin."
