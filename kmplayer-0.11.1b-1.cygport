@@ -1,0 +1,11 @@
+inherit kde4
+
+DESCRIPTION="KDE MPlayer/Xine/GStreamer frontend"
+HOMEPAGE="http://kmplayer.kde.org/"
+SRC_URI="http://kmplayer.kde.org/pkgs/${P}.tar.bz2"
+PATCH_URI="0.11.1b-pluginsinfo.patch
+           0.11.1b-gcc-visibility.patch"
+
+kmplayer_CONTENTS="etc/ usr/bin/ usr/lib/kde4/*.* usr/share/"
+# private library
+PKG_IGNORE="usr/lib/kde4/lib/"

@@ -1,0 +1,21 @@
+--- origsrc/kmplayer-0.11.1b/src/kmplayer_def.h	2009-06-17 14:42:47.000000000 -0500
++++ src/kmplayer-0.11.1b/src/kmplayer_def.h	2009-07-14 00:05:07.641973800 -0500
+@@ -30,6 +30,7 @@
+ 
+ #include <kdemacros.h>
+ 
++#ifdef __KDE_HAVE_GCC_VISIBILITY
+ #undef KDE_NO_CDTOR_EXPORT
+ #undef KDE_NO_EXPORT
+ #ifndef KDE_EXPORT
+@@ -57,9 +58,9 @@
+   #define KMPLAYER_EXPORT
+   #define KMPLAYER_NO_EXPORT
+   #define KMPLAYER_NO_MBR_EXPORT
++#endif
+ #else
+   #define KDE_NO_CDTOR_EXPORT
+-  #define KDE_NO_EXPORT
+   #define KMPLAYER_EXPORT
+   #define KMPLAYER_NO_EXPORT
+   #define KMPLAYER_NO_MBR_EXPORT
