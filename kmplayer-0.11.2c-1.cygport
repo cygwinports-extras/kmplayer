@@ -8,4 +8,4 @@ PATCH_URI="0.11.1b-pluginsinfo.patch
 
 kmplayer_CONTENTS="etc/ usr/bin/ usr/lib/kde4/*.* usr/share/"
 # private library
-PKG_IGNORE="usr/lib/kde4/lib/"
+PKG_IGNORE="usr/lib/*.a"
