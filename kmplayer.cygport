@@ -1,18 +1,20 @@
-inherit kde4
+inherit kf5
 
 NAME="kmplayer"
-VERSION=0.11.3d
+VERSION=0.12.0b
 RELEASE=1
 CATEGORY="Audio Video KDE"
 SUMMARY="KDE multimedia player with Konqueror plugin"
 DESCRIPTION="A simple KDE frontend for MPlayer/FFMpeg/Phonon, as well as a
 Konqueror KPart plugin."
 HOMEPAGE="http://kmplayer.kde.org/"
-SRC_URI="http://kmplayer.kde.org/pkgs/${P}.tar.bz2"
+SRC_URI="mirror://kde/stable/kmplayer/${VERSION%.*}/kmplayer-${VERSION}.tar.bz2"
 PATCH_URI="0.11.1b-pluginsinfo.patch
            0.11.1b-gcc-visibility.patch"
 
 kmplayer_REQUIRES="ffmpeg mplayer"
-kmplayer_CONTENTS="etc/ usr/bin/ usr/lib/kde4/*.* usr/share/"
+kmplayer_CONTENTS="etc/ usr/bin/ usr/lib/qt5/ usr/share/"
 # private library
 PKG_IGNORE="usr/lib/*.a"
+
+CYGCMAKE_ARGS="-DKMPLAYER_BUILT_WITH_NPP=OFF"
