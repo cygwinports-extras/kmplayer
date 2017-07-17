@@ -1,0 +1,10 @@
+--- origsrc/kmplayer-0.12.0b/src/kmplayerrc	2016-09-24 10:29:58.000000000 -0500
++++ src/kmplayer-0.12.0b/src/kmplayerrc	2017-04-02 22:14:26.841158500 -0500
+@@ -22,7 +23,6 @@ Add Record Button=true
+ Add Broadcast Button=true
+ Auto Play After Recording=true
+ Show DVD Menu=true
+-Video Driver=xv
+ 
+ [Pipe Command]
+ Command1=cat ~/example.avi

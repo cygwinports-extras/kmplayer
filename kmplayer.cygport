@@ -9,8 +9,12 @@ DESCRIPTION="A simple KDE frontend for MPlayer/FFMpeg/Phonon, as well as a
 Konqueror KPart plugin."
 HOMEPAGE="http://kmplayer.kde.org/"
 SRC_URI="mirror://kde/stable/kmplayer/${VERSION%.*}/kmplayer-${VERSION}.tar.bz2"
-PATCH_URI="0.11.1b-pluginsinfo.patch
-           0.11.1b-gcc-visibility.patch"
+PATCH_URI="
+	0.11.1b-pluginsinfo.patch
+	0.11.1b-gcc-visibility.patch
+	0.12.0b-config.patch
+	0.12.0b-desktop.patch
+"
 
 kmplayer_REQUIRES="ffmpeg mplayer"
 kmplayer_CONTENTS="etc/ usr/bin/ usr/lib/qt5/ usr/share/"
